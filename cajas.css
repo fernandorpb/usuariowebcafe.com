@@ -1,0 +1,169 @@
+    
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box ; /* se crea un bloque a cada selector , se acomoda el bloque a la pagina*/
+
+}
+header{font-size: 50px;
+    
+}
+html{
+    background-image: url("/imagenes/fondo\ javscrip.jpg");
+    background-repeat: no-repeat; /* la imagen de fondo no se repite */
+    background-position: center center ;/* la imagen va al centro*/
+    height: 1000px /* tu pagina mide de acuerdo a las preferencias y desplazar hacia abajo*/;
+    background-attachment: fixed; /* la imagen se qued estatica*/
+    background-size: cover; /*se expande la imagen completamente*/
+
+}
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5em; /* em permite  q se adapte a cualquier tamaño de la pagina la letra*/
+    min-height: 100%; /*hace q ocupe toda la pantalla los bloques*/ 
+}
+body > * /*el body dentro del selector universal*/{
+    box-shadow:-1px 1px 7px 0px rgba(0, 0, 0, 0.75); /* a cada caja se pondra sombre*/
+    border-radius: 4px; /* las esqinas de las cajas no seran puntiagudas*/
+    padding: 10px;
+    text-align: center;
+}
+body{
+    display:grid; /* se forman cajas de una columna*/
+    gap:10px;/*separaciones*/
+    grid-template-areas: /* definir las areas para un mismo diseño*/
+    "header"
+    "nav"
+    "section"
+    "aside"
+    "footer";
+}
+
+.header{
+    grid-area: header ;
+    background-color: black;
+}
+.nav{
+    grid-area: nav ;
+    background-color: rgb(129, 68, 68);
+}
+.section{
+    grid-area: section ;
+    background-color: rgb(15, 92, 136);
+    opacity: .90;
+}
+.aside{
+    grid-area: aside ;
+    background-color: aqua;
+}
+.footer{
+    grid-area: footer;
+    background-color: rgb(31, 5, 65);
+}
+/*pseudico:es una palar clave que se añade a los selectores y q se especifica en un estado especial del elemento selecionado*/
+/*tamaño tablet*/
+
+@media (min-width:600px){
+    body{
+        grid-template-columns: 200px auto; /* vertica y el resto auto*/
+        grid-template-rows: 100px 50px auto 100px; /* "filas" arriba derecha abajo izquierda*/
+        grid-template-areas: 
+        "header header"
+        "nav nav"
+        "aside section"
+        "footer footer";
+    }
+}
+.definicion{
+    display: flex;
+    text-align: justify;
+    font-size: 20px;
+    align-items: center;
+
+    
+}
+.definicion2{
+    display: flex;
+    text-align: justify;
+    font-size: 20px;
+    align-items: center;
+}
+header{
+    display: flex;
+    justify-content: space-between;    /*se separan header o img */
+    align-items: center; /*se alinea las figuras del cuadr*/
+    
+
+}
+section h1{
+    display: block;
+    padding: 20px;
+}
+.imagen{
+    height:250px;
+    width:500px;
+}
+.imagen:hover{
+    transition: .9s;
+    opacity: .5;
+    
+}
+.imagen2:hover{
+    transition: .9s;
+    opacity: .5;
+
+}
+header h2{
+    margin: auto;
+    color: white;
+
+
+}
+.texto1{
+    display: block;
+    padding: 10px;
+}
+.texto2{
+    display: block;
+    padding: 10px;
+
+}
+.estilo3d{
+    text-align: center; 
+    font-family: Arial Black; 
+    font-weight: bold; 
+    font-size: 70px; 
+    color: #fff; 
+    text-shadow: 0 1px 0 #ddd, 0 2px 0 #ccc, 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #acacac, 0 6px 1px rgba(0,0,0,0.1), 0 0 5px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.3), 0 3px 5px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.2), 0 20px 20px rgba(0,0,0,0.15);
+}
+.nav li{
+    display: inline-block;
+    
+}
+.nav a{
+    text-decoration: none;
+    padding: 40px;
+    color: rgb(47, 201, 129);
+}
+.nav a:hover{
+    color:black;
+
+}
+aside h1{
+    font-family: garamond;
+}
+.logos{
+    
+    display: flex;
+    padding: 0px 5px 5px;
+    
+
+}
+.logos img{
+    padding:0px 5px 5px ;
+}
+footer{
+    display: flex;
+    align-items: center;
+    color: yellow;
+}
